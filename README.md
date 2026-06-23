@@ -15,18 +15,35 @@ PerspectiveGap evaluates LLMs' ability to compose orchestration prompts for mult
 pip install git+https://github.com/WhymustIhaveaname/PerspectiveGap-inspect.git
 ```
 
+Inspect AI treats model providers as optional dependencies.
+Install the client library for the provider you want to use:
+
+```bash
+pip install openai      # for OpenAI models
+pip install anthropic   # for Anthropic models
+```
+
 ## Usage
 
 ```bash
 # Run role-fragment assignment task
-inspect eval perspective_gap_inspect/role_assignment --model openai/gpt-4o
+inspect eval perspective_gap_inspect/role_assignment --model openai/gpt-5.5
 
 # Run free-form prompt writing task
-inspect eval perspective_gap_inspect/prompt_writing --model openai/gpt-4o
+inspect eval perspective_gap_inspect/prompt_writing --model openai/gpt-5.5
 
 # Limit to a subset of samples
-inspect eval perspective_gap_inspect/role_assignment --model openai/gpt-4o --limit 20
+inspect eval perspective_gap_inspect/role_assignment --model openai/gpt-5.5 --limit 20
 ```
+
+## Validation
+
+Results from this implementation match the paper (all within 95% CI):
+
+| | role_assignment | prompt_writing |
+|---|---|---|
+| **gpt-5.5** | 60.9% (paper 55.5%) | 65.5% (paper 68.6%) |
+| **gpt-5.4** | 23.2% (paper 25.5%) | 4.5% (paper 2.3%) |
 
 ## Dataset
 
