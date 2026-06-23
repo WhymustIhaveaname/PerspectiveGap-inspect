@@ -1,0 +1,33 @@
+[project]
+name = "perspective-gap-inspect"
+version = "0.1.0"
+description = "PerspectiveGap benchmark for Inspect AI"
+license = "MIT"
+requires-python = ">=3.13"
+dependencies = [
+    "inspect-ai>=0.3.95",
+    "datasets>=3.0.0",
+    "perspective-gap @ git+https://github.com/WhymustIhaveaname/PerspectiveGap.git",
+]
+
+[project.entry-points.inspect_ai]
+perspective_gap_inspect = "perspective_gap_inspect"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/perspective_gap_inspect"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.0",
+]

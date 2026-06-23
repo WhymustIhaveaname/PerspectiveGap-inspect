@@ -1,0 +1,19 @@
+title: PerspectiveGap
+description: >
+  Evaluates LLMs' ability to compose orchestration prompts for multi-agent systems.
+  Tests whether a model can decide what each sub-agent needs to know without leaking
+  irrelevant context. Two tasks: role-fragment assignment (JSON output) and
+  free-form prompt writing (markdown output with verbatim fragments).
+arxiv: "2606.08878"
+group: Reasoning
+tasks:
+  - name: role_assignment
+    description: >
+      Select the visible fragment IDs that belong in each sub-agent prompt.
+      Output a JSON object mapping role names to lists of fragment IDs.
+  - name: prompt_writing
+    description: >
+      Write one prompt per sub-agent, including only the needed fragments verbatim.
+      Output markdown with h1 headers per role.
+contributors:
+  - WhymustIhaveaname
