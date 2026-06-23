@@ -7,7 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "inspect-ai>=0.3.95",
     "datasets>=3.0.0",
-    "perspective-gap @ git+https://github.com/WhymustIhaveaname/PerspectiveGap.git",
+    "perspective-gap @ git+https://github.com/WhymustIhaveaname/PerspectiveGap.git@1d55cb616a84a2544f0775bcf4081d3082e21b60",
 ]
 
 [project.entry-points.inspect_ai]
