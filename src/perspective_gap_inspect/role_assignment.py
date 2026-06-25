@@ -9,7 +9,7 @@ from inspect_ai.solver import generate
 from perspective_gap_inspect.scorers import role_assignment_scorer
 
 HF_DATASET = "sun1245/PerspectiveGap"
-HF_REVISION = "main"
+HF_REVISION = "89ee514670438b7d1b25fe958ea6335ca69934b0"
 
 
 def _record_to_sample(record: dict) -> Sample:
